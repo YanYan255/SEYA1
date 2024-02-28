@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seya Companion Widget</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('https://image.freepik.com/free-vector/science-laboratory-interior_1284-26443.jpg');
+      background-size: cover;
+      font-family: Arial, sans-serif;
+    }
+    #widget-container {
+      width: 400px;
+      height: 400px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 10px;
+      margin: 50px auto;
+      padding: 20px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    button {
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    #response-container {
+      height: 200px;
+      overflow-y: scroll;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+
+<div id="widget-container">
+  <h1>Welcome to SeyaBot Companion Widget</h1>
+  <div id="response-container"></div>
+  <button id="advice-btn">Advice</button>
+  <button id="cheer-btn">Cheer Up</button>
+</div>
+
+<script>
+  // Function to display response
+  function displayResponse(response) {
+    var responseContainer = document.getElementById('response-container');
+    responseContainer.innerHTML += '<p>' + response + '</p>';
+    responseContainer.scrollTop = responseContainer.scrollHeight;
+  }
+
+  // Advice button click event
+  document.getElementById('advice-btn').addEventListener('click', function() {
+    var responses = [
+      "Remember, every setback is a setup for a comeback!",
+      "Take small steps every day towards your goals.",
+      "Don't be afraid to ask for help when you need it.",
+      "Believe in yourself, you are capable of great things!",
+      "Stay positive and keep moving forward."
+    ];
+    var randomIndex = Math.floor(Math.random() * responses.length);
+    displayResponse(responses[randomIndex]);
+  });
+
+  // Cheer Up button click event
+  document.getElementById('cheer-btn').addEventListener('click', function() {
+    var responses = [
+      "Why did the scarecrow win an award? Because he was outstanding in his field!",
+      "You're amazing just the way you are!",
+      "Every day may not be good, but there's something good in every day.",
+      "You've got this!",
+      "You're not alone, I'm here to support you!"
+    ];
+    var randomIndex = Math.floor(Math.random() * responses.length);
+    displayResponse(responses[randomIndex]);
+  });
+</script>
+
+</body>
+</html>
